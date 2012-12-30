@@ -1,0 +1,30 @@
+var sparkline = function(canvas_id, data, endpoint) {
+	if (!!window.HTMLCanvasElement) {
+		var c = document.getElementById(canvas_id),
+			ctx = c.getContext('2d'),
+			height = c.height - 0.5,
+			width = c.width - 0.5,
+			total = data.length,
+			max = Math.max.apply(Math, data),
+			xstep = width/total,
+			ystep = max/height,
+			x = 0,
+			y = height - data[0]/ystep,
+			i;
+		ctx.beginPath();
+		ctx.strokeStyle = 'rgba(0,0,0,0.5)';
+		ctx.moveTo(x, y);
+		for (i = 1; i < total; i = i + 1) {
+			x = x + xstep;
+			y = height - data[i]/ystep;
+			ctx.lineTo(x, y);
+		}
+		ctx.stroke();
+		if (endpoint) {
+			ctx.beginPath();
+			ctx.fillStyle = 'rgba(255,0,0,0.5)';
+			ctx.arc(x, y, 1.5, 0, Math.PI*2);
+			ctx.fill();
+		}
+	}
+};

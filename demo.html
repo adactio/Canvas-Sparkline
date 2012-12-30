@@ -62,7 +62,7 @@
 
 <script>
 var sparkline = function(canvas_id, data, endpoint) {
-	if (!!window.HTMLCanvasElement) {
+	if (window.HTMLCanvasElement) {
 		var c = document.getElementById(canvas_id),
 			ctx = c.getContext('2d'),
 			height = c.height - 0.5,

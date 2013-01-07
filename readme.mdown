@@ -21,7 +21,7 @@ Place your canvas element wherever you want it to appear in your document:
 You can link to the <code>sparkline.js</code> file at the end of your HTML document and then call the function afterwards:
 
 
-	<script src="sparkline.js"</script>
+	<script src="sparkline.js"></script>
 	<script>
 	sparkline ('mycanvas', [145, 123, 121, 78, 23, 9, 23, 24, 25, 89, 35, 124, 78, 98], true);
 	</script>

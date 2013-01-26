@@ -2,13 +2,19 @@
 
 This is a little snippet of JavaScript that will take an array of numeric values (in any range) and plot those values as a [sparkline](http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0001OR&topic_id=1).
 
-The <code>sparkline</code> function takes three parameters:
+The <code>sparkline</code> function takes five parameters:
 
 1. <code>canvas_id</code>: The ID of a canvas element.
 2. <code>data</code>: An array of numeric values.
 3. <code>endpoint</code>: A Boolean value.
+4. <code>color</code>: A string value.
+5. <code>style</code>: A string value, either 'line' or 'bar'.
 
 If <code>endpoint</code> is set to <code>true</code> then the sparkline will mark the final value with a red dot.
+
+If <code>color</code> is not set, the sparkline will default to 50% transparent black.
+
+If <code>style</code> is not set, the sparkline will default to 'line'.
 
 The <code>demo.html</code> shows a few examples. The distribution of the values is determined by the dimensions of the canvas element. So it doesn't matter if the <code>data</code> array contains values that are larger than the pixel dimensions of the canvas element: the script will normalise the values to fit.
 
@@ -29,10 +35,10 @@ You can link to the <code>sparkline.js</code> file at the end of your HTML docum
 Or you can inline the <code>sparkline</code> function at the bottom of your document (to avoid the extra HTTP request):
 
 	<script>
-	var sparkline = function(canvas_id, data, endpoint) {
+	var sparkline = function(canvas_id, data, endpoint, color, style) {
 	...
 	};
-	sparkline('mycanvas', [145, 123, 121, 78, 23, 9, 23, 24, 25, 89, 35, 124, 78, 98], true);
+	sparkline('mycanvas', [145, 123, 121, 78, 23, 9, 23, 24, 25, 89, 35, 124, 78, 98], true, 'rgba(0,0,255,.5)','line');
 	</script>
 
 You can see the script in action on member profiles on the website The Session e.g. <http://thesession.org/members/1>

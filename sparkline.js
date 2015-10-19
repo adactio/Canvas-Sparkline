@@ -13,6 +13,7 @@ var sparkline = function(canvas_id, data, endpoint, color, style) {
 			x = 0,
 			y = height - data[0]/ystep,
 			i;
+		ctx.clearRect(0, 0, width, height);
 		ctx.beginPath();
 		ctx.strokeStyle = color;
 		ctx.moveTo(x, y);

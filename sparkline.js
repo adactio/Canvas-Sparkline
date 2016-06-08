@@ -13,13 +13,15 @@ var sparkline = function(canvas_id, data, endpoint, color, style) {
 			x = 0,
 			y = height - data[0]/ystep,
 			i;
-		c.width = c.width * window.devicePixelRatio;
-		c.height = c.height * window.devicePixelRatio;
-		c.style.width = (c.width / window.devicePixelRatio) + 'px';
-		c.style.height = (c.height / window.devicePixelRatio) + 'px';
-		c.style.display = 'inline-block';
+		if (window.devicePixelRatio) {
+			c.width = c.width * window.devicePixelRatio;
+			c.height = c.height * window.devicePixelRatio;
+			c.style.width = (c.width / window.devicePixelRatio) + 'px';
+			c.style.height = (c.height / window.devicePixelRatio) + 'px';
+			c.style.display = 'inline-block';
+			ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+		}
 		ctx.clearRect(0, 0, width, height);
-		ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
 		ctx.beginPath();
 		ctx.strokeStyle = color;
 		ctx.moveTo(x, y);

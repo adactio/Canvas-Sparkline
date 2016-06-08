@@ -22,23 +22,23 @@ The <code>demo.html</code> shows a few examples. The distribution of the values 
 
 Place your canvas element wherever you want it to appear in your document:
 
-	<canvas id="mycanvas" width="90" height="18"></canvas>
+  <canvas id="mycanvas" width="90" height="18"></canvas>
 
 You can link to the <code>sparkline.js</code> file at the end of your HTML document and then call the function afterwards:
 
 
-	<script src="sparkline.js"></script>
-	<script>
-	sparkline ('mycanvas', [145, 123, 121, 78, 23, 9, 23, 24, 25, 89, 35, 124, 78, 98], true);
-	</script>
+  <script src="sparkline.js"></script>
+  <script>
+  sparkline ('mycanvas', [145, 123, 121, 78, 23, 9, 23, 24, 25, 89, 35, 124, 78, 98], true);
+  </script>
 
 Or you can inline the <code>sparkline</code> function at the bottom of your document (to avoid the extra HTTP request):
 
-	<script>
-	var sparkline = function(canvas_id, data, endpoint, color, style) {
-	...
-	};
-	sparkline('mycanvas', [145, 123, 121, 78, 23, 9, 23, 24, 25, 89, 35, 124, 78, 98], true, 'rgba(0,0,255,.5)','line');
-	</script>
+  <script>
+  var sparkline = function(canvas_id, data, endpoint, color, style) {
+  ...
+  };
+  sparkline('mycanvas', [145, 123, 121, 78, 23, 9, 23, 24, 25, 89, 35, 124, 78, 98], true, 'rgba(0,0,255,.5)','line');
+  </script>
 
 You can see the script in action on member profiles on the website The Session e.g. <http://thesession.org/members/1>

@@ -43,7 +43,7 @@ Or you can inline the <code>sparkline</code> function at the bottom of your docu
 
 You can see the script in action on member profiles on the website The Session e.g. <http://thesession.org/members/1>
 
-##Licence
+## Licence
 
 Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
 
